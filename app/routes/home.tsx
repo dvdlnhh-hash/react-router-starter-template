@@ -1,17 +1,13 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import SanctuaryCraft from "../sanctuarycraft";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "New React Router App" },
-		{ name: "description", content: "Welcome to React Router!" },
+		{ title: "SanctuaryCraft — Premium Getaway & Property Planner" },
+		{ name: "description", content: "Plan, design, and launch your boutique rental property or guest experience." },
 	];
 }
 
-export function loader({ context }: Route.LoaderArgs) {
-	return { message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE };
-}
-
-export default function Home({ loaderData }: Route.ComponentProps) {
-	return <Welcome message={loaderData.message} />;
+export default function Home({}: Route.ComponentProps) {
+	return <SanctuaryCraft />;
 }
